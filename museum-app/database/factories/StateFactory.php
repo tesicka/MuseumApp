@@ -16,7 +16,7 @@ class StateFactory extends Factory
         return [
             
             'name' => $this->faker->country(),
-            'currency' => $this->$faker->currencyCode(),
+            'currency' => $this->faker->currencyCode(),
         ];
     }
 }

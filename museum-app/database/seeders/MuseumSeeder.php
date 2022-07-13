@@ -13,6 +13,6 @@ class MuseumSeeder extends Seeder
      */
     public function run()
     {
-        //
+       // $museum = Museum::factory(10)->create();
     }
 }

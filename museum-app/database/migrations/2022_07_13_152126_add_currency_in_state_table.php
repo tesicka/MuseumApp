@@ -15,7 +15,7 @@ class AddCurrencyInStateTable extends Migration
     {
         Schema::table('states', function (Blueprint $table) {
 
-                $table->integer('currency');
+                $table->string('currency');
         });
     }
 

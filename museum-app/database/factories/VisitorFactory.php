@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\State;
+use App\Models\Museum;
 
 class VisitorFactory extends Factory
 {
@@ -15,7 +17,7 @@ class VisitorFactory extends Factory
     {
         return [
             
-        'name' => $this->faker->name(),
+        'nameAndSurname' => $this->faker->name(),
         'email' => $this->faker->safeEmail(),
         'age' => $this->faker->numberBetween($min = 5, $max = 90),
         'museum_id'=> Museum::factory(),

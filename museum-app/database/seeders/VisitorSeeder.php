@@ -13,6 +13,9 @@ class VisitorSeeder extends Seeder
      */
     public function run()
     {
-        //
+       /* Visitor::factory(20)->create()([
+            'museum_id'=>$museum->id,
+            'state_id'=>$state->id,
+        ]);*/
     }
 }
