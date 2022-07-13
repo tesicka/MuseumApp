@@ -10,19 +10,21 @@ class Visitor extends Model
     use HasFactory;
 
     protected $fillable=[
-        'name',
+        'nameAndSurname',
         'email',
         'age',
         'museum_id',
         'state_id',
     ];
+
     
-    public function states()
+    
+    public function state()
     {
         return $this->belongsTo(State::class);
     }
 
-    public function museums()
+    public function museum()
     {
         return $this->belongsTo(Museum::class);
     }
