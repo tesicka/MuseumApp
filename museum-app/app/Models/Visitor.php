@@ -16,6 +16,16 @@ class Visitor extends Model
         'museum_id',
         'state_id',
     ];
+    
+    public function states()
+    {
+        return $this->belongsTo(State::class);
+    }
 
+    public function museums()
+    {
+        return $this->belongsTo(Museum::class);
+    }
+    
 
 }

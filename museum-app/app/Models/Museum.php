@@ -14,4 +14,9 @@ class Museum extends Model
         'type',
         'town',
     ];
+
+    public function visitors()
+    {
+        return $this->hasMany(Visitor::class);
+    }
 }

@@ -13,4 +13,9 @@ class State extends Model
         'name',
         
     ];
+
+    public function visitors()
+    {
+        return $this->hasMany(Visitor::class);
+    }
 }
