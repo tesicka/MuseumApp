@@ -14,7 +14,13 @@ class VisitorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            
+        'name' => $this->faker->name(),
+        'email' => $this->faker->safeEmail(),
+        'age' => $this->faker->numberBetween($min = 5, $max = 90),
+        'museum_id'=> Museum::factory(),
+        'state_id'=> State::factory(),
+
         ];
     }
 }

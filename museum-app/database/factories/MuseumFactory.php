@@ -14,7 +14,10 @@ class MuseumFactory extends Factory
     public function definition()
     {
         return [
-            //
+            
+            'name' => $this->faker->word(),
+            'town' => $this->faker->city(),
+            'type' => $this->faker->word(),
         ];
     }
 }
