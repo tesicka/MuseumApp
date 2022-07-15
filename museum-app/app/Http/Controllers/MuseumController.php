@@ -16,8 +16,9 @@ class MuseumController extends Controller
      */
     public function index()
     {
-        $museums=Museum::all();
-        return $museums;
+        $museums = Museum::all();
+        return MuseumResource::collection($museums);
+        
     }
 
     /**

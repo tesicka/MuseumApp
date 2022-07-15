@@ -10,7 +10,7 @@ class Visitor extends Model
     use HasFactory;
 
     protected $fillable=[
-        'nameAndSurname',
+        'name',
         'email',
         'age',
         'museum_id',

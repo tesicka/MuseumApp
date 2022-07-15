@@ -53,7 +53,7 @@ class VisitorController extends Controller
             return response()->json("Data not found",404);
         }
 
-        return response()->json($visitor);
+        return new VisitorResource($visitor);
     }
 
     /**

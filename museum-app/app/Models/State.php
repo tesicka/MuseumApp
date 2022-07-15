@@ -11,7 +11,6 @@ class State extends Model
 
     protected $fillable=[
         'name',
-        'currency',
         
     ];
 
