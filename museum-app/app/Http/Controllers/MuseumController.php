@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Museum;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\MuseumResource;
 
 class MuseumController extends Controller
@@ -38,7 +38,22 @@ class MuseumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'type' => 'required',
+            'town' => 'required'       
+        ]);
+
+        if ($validator->fails())
+            return response()->json($validator->errors());
+
+        $museum = Museum::create([
+            'name' => $request->name,
+            'type' => $request->type,
+            'town' => $request->town
+        ]);
+
+        return response()->json(['Museum is created successfully.', new MuseumResource($museum)]);
     }
 
     /**
@@ -72,7 +87,7 @@ class MuseumController extends Controller
      */
     public function update(Request $request, Museum $museum)
     {
-        //
+       
     }
 
     /**
@@ -85,6 +100,6 @@ class MuseumController extends Controller
     {
         
         $museum->delete();
-        return new MuseumResource($museum);
+        return response()->json("Museum deleted successfuly");
     }
 }
